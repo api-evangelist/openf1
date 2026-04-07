@@ -1,8 +1,8 @@
 aid: openf1
 name: OpenF1
 description: >-
-  OpenF1 is a free and open-source API that provides real-time and historical
-  Formula 1 data. 
+  OpenF1 is a free and open-source API that provides real-time and historical Formula
+  1 data.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -18,8 +18,8 @@ apis:
   - aid: openf1:openf1
     name: OpenF1
     description: >-
-      OpenF1 is a free and open-source API that provides real-time and
-      historical Formula 1 data. 
+      OpenF1 is a free and open-source API that provides real-time and historical
+      Formula 1 data.
     humanURL: ' https://openf1.org/'
     tags:
       - API
