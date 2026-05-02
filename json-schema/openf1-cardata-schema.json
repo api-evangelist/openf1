@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/openf1/json-schema/openf1-cardata-schema.json",
+  "title": "OpenF1 Car Telemetry",
+  "type": "object",
+  "properties": {
+    "meeting_key": {"type": "integer"},
+    "session_key": {"type": "integer"},
+    "driver_number": {"type": "integer"},
+    "date": {"type": "string", "format": "date-time"},
+    "rpm": {"type": "integer"},
+    "speed": {"type": "integer"},
+    "n_gear": {"type": "integer"},
+    "throttle": {"type": "integer"},
+    "brake": {"type": "integer"},
+    "drs": {"type": "integer"}
+  },
+  "required": ["session_key", "driver_number", "date"]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/openf1/json-schema/openf1-lap-schema.json",
+  "title": "OpenF1 Lap",
+  "type": "object",
+  "properties": {
+    "meeting_key": {"type": "integer"},
+    "session_key": {"type": "integer"},
+    "driver_number": {"type": "integer"},
+    "lap_number": {"type": "integer"},
+    "date_start": {"type": "string", "format": "date-time"},
+    "duration_sector_1": {"type": "number"},
+    "duration_sector_2": {"type": "number"},
+    "duration_sector_3": {"type": "number"},
+    "i1_speed": {"type": "integer"},
+    "i2_speed": {"type": "integer"},
+    "st_speed": {"type": "integer"},
+    "is_pit_out_lap": {"type": "boolean"},
+    "lap_duration": {"type": "number"}
+  },
+  "required": ["session_key", "driver_number", "lap_number"]
+}

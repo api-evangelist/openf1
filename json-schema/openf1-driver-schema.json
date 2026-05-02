@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/openf1/json-schema/openf1-driver-schema.json",
+  "title": "OpenF1 Driver",
+  "type": "object",
+  "properties": {
+    "meeting_key": {"type": "integer"},
+    "session_key": {"type": "integer"},
+    "driver_number": {"type": "integer"},
+    "broadcast_name": {"type": "string"},
+    "full_name": {"type": "string"},
+    "name_acronym": {"type": "string"},
+    "team_name": {"type": "string"},
+    "team_colour": {"type": "string"},
+    "first_name": {"type": "string"},
+    "last_name": {"type": "string"},
+    "headshot_url": {"type": "string", "format": "uri"},
+    "country_code": {"type": "string"}
+  },
+  "required": ["session_key", "driver_number"]
+}

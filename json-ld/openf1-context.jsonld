@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "openf1": "https://api.openf1.org/schemas/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Session": {
+      "@id": "openf1:Session",
+      "@context": {
+        "session_key": {"@id": "openf1:sessionKey", "@type": "xsd:integer"},
+        "session_name": "schema:name",
+        "session_type": "openf1:sessionType",
+        "date_start": {"@id": "schema:startDate", "@type": "xsd:dateTime"},
+        "date_end": {"@id": "schema:endDate", "@type": "xsd:dateTime"},
+        "meeting_key": {"@id": "openf1:meetingKey", "@type": "xsd:integer"},
+        "circuit_short_name": "openf1:circuit",
+        "country_name": "schema:addressCountry",
+        "year": {"@id": "openf1:year", "@type": "xsd:integer"}
+      }
+    },
+
+    "Driver": {
+      "@id": "openf1:Driver",
+      "@context": {
+        "driver_number": {"@id": "openf1:driverNumber", "@type": "xsd:integer"},
+        "full_name": "schema:name",
+        "first_name": "schema:givenName",
+        "last_name": "schema:familyName",
+        "name_acronym": "openf1:acronym",
+        "team_name": "openf1:team",
+        "team_colour": "openf1:teamColour",
+        "headshot_url": {"@id": "schema:image", "@type": "@id"},
+        "country_code": "schema:nationality"
+      }
+    },
+
+    "Lap": {
+      "@id": "openf1:Lap",
+      "@context": {
+        "lap_number": {"@id": "openf1:lapNumber", "@type": "xsd:integer"},
+        "lap_duration": {"@id": "openf1:lapDuration", "@type": "xsd:decimal"},
+        "duration_sector_1": {"@id": "openf1:sector1", "@type": "xsd:decimal"},
+        "duration_sector_2": {"@id": "openf1:sector2", "@type": "xsd:decimal"},
+        "duration_sector_3": {"@id": "openf1:sector3", "@type": "xsd:decimal"},
+        "i1_speed": {"@id": "openf1:i1Speed", "@type": "xsd:integer"},
+        "i2_speed": {"@id": "openf1:i2Speed", "@type": "xsd:integer"},
+        "st_speed": {"@id": "openf1:stSpeed", "@type": "xsd:integer"},
+        "is_pit_out_lap": {"@id": "openf1:isPitOutLap", "@type": "xsd:boolean"}
+      }
+    },
+
+    "CarData": {
+      "@id": "openf1:CarData",
+      "@context": {
+        "rpm": {"@id": "openf1:rpm", "@type": "xsd:integer"},
+        "speed": {"@id": "openf1:speed", "@type": "xsd:integer"},
+        "n_gear": {"@id": "openf1:gear", "@type": "xsd:integer"},
+        "throttle": {"@id": "openf1:throttle", "@type": "xsd:integer"},
+        "brake": {"@id": "openf1:brake", "@type": "xsd:integer"},
+        "drs": {"@id": "openf1:drs", "@type": "xsd:integer"},
+        "date": {"@id": "dcterms:date", "@type": "xsd:dateTime"}
+      }
+    },
+
+    "PitStop": {
+      "@id": "openf1:PitStop",
+      "@context": {
+        "lap_number": {"@id": "openf1:lapNumber", "@type": "xsd:integer"},
+        "pit_duration": {"@id": "openf1:pitDuration", "@type": "xsd:decimal"},
+        "stop_duration": {"@id": "openf1:stopDuration", "@type": "xsd:decimal"},
+        "lane_duration": {"@id": "openf1:laneDuration", "@type": "xsd:decimal"}
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/openf1/json-schema/openf1-session-schema.json",
+  "title": "OpenF1 Session",
+  "type": "object",
+  "properties": {
+    "session_key": {"type": "integer"},
+    "session_name": {"type": "string"},
+    "session_type": {"type": "string"},
+    "date_start": {"type": "string", "format": "date-time"},
+    "date_end": {"type": "string", "format": "date-time"},
+    "meeting_key": {"type": "integer"},
+    "circuit_key": {"type": "integer"},
+    "circuit_short_name": {"type": "string"},
+    "country_key": {"type": "integer"},
+    "country_code": {"type": "string"},
+    "country_name": {"type": "string"},
+    "location": {"type": "string"},
+    "gmt_offset": {"type": "string"},
+    "year": {"type": "integer"},
+    "is_cancelled": {"type": "boolean"}
+  },
+  "required": ["session_key", "meeting_key"]
+}
