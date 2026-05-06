@@ -1,0 +1,744 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API
+  description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry,
+    lap timing, race control, weather, pit stops, team radio, and championship standings.
+  tags:
+  - Openf1
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: openf1
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API HTTP API.
+    resources:
+    - name: sessions
+      path: /sessions
+      operations:
+      - name: listsessions
+        method: GET
+        description: List F1 sessions
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: meeting_key
+          in: query
+          type: integer
+        - name: year
+          in: query
+          type: integer
+        - name: country_name
+          in: query
+          type: string
+        - name: session_type
+          in: query
+          type: string
+        - name: session_name
+          in: query
+          type: string
+        - name: circuit_short_name
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: meetings
+      path: /meetings
+      operations:
+      - name: listmeetings
+        method: GET
+        description: List Grand Prix meetings
+        inputParameters:
+        - name: meeting_key
+          in: query
+          type: integer
+        - name: year
+          in: query
+          type: integer
+        - name: country_name
+          in: query
+          type: string
+        - name: circuit_short_name
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: drivers
+      path: /drivers
+      operations:
+      - name: listdrivers
+        method: GET
+        description: List drivers for a session
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: meeting_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: team_name
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: laps
+      path: /laps
+      operations:
+      - name: listlaps
+        method: GET
+        description: List laps with sector and speed-trap times
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: lap_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: car-data
+      path: /car_data
+      operations:
+      - name: getcardata
+        method: GET
+        description: High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: speed
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: location
+      path: /location
+      operations:
+      - name: getlocation
+        method: GET
+        description: Three-dimensional car location on track
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: position
+      path: /position
+      operations:
+      - name: getposition
+        method: GET
+        description: Driver running order during a session
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: position
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: intervals
+      path: /intervals
+      operations:
+      - name: getintervals
+        method: GET
+        description: Real-time intervals between drivers (race only)
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: pit
+      path: /pit
+      operations:
+      - name: listpitstops
+        method: GET
+        description: List pit-lane events
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stints
+      path: /stints
+      operations:
+      - name: liststints
+        method: GET
+        description: List tyre stints with compound and age
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: weather
+      path: /weather
+      operations:
+      - name: getweather
+        method: GET
+        description: Track weather conditions during a session
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: race-control
+      path: /race_control
+      operations:
+      - name: listracecontrol
+        method: GET
+        description: Race control messages, flags, and incidents
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: category
+          in: query
+          type: string
+        - name: flag
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: team-radio
+      path: /team_radio
+      operations:
+      - name: listteamradio
+        method: GET
+        description: List team radio recordings
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: openf1-rest
+    description: REST adapter for OpenF1 API.
+    resources:
+    - path: /sessions
+      name: listsessions
+      operations:
+      - method: GET
+        name: listsessions
+        description: List F1 sessions
+        call: openf1.listsessions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /meetings
+      name: listmeetings
+      operations:
+      - method: GET
+        name: listmeetings
+        description: List Grand Prix meetings
+        call: openf1.listmeetings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /drivers
+      name: listdrivers
+      operations:
+      - method: GET
+        name: listdrivers
+        description: List drivers for a session
+        call: openf1.listdrivers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /laps
+      name: listlaps
+      operations:
+      - method: GET
+        name: listlaps
+        description: List laps with sector and speed-trap times
+        call: openf1.listlaps
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /car_data
+      name: getcardata
+      operations:
+      - method: GET
+        name: getcardata
+        description: High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)
+        call: openf1.getcardata
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /location
+      name: getlocation
+      operations:
+      - method: GET
+        name: getlocation
+        description: Three-dimensional car location on track
+        call: openf1.getlocation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /position
+      name: getposition
+      operations:
+      - method: GET
+        name: getposition
+        description: Driver running order during a session
+        call: openf1.getposition
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /intervals
+      name: getintervals
+      operations:
+      - method: GET
+        name: getintervals
+        description: Real-time intervals between drivers (race only)
+        call: openf1.getintervals
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /pit
+      name: listpitstops
+      operations:
+      - method: GET
+        name: listpitstops
+        description: List pit-lane events
+        call: openf1.listpitstops
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /stints
+      name: liststints
+      operations:
+      - method: GET
+        name: liststints
+        description: List tyre stints with compound and age
+        call: openf1.liststints
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /weather
+      name: getweather
+      operations:
+      - method: GET
+        name: getweather
+        description: Track weather conditions during a session
+        call: openf1.getweather
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /race_control
+      name: listracecontrol
+      operations:
+      - method: GET
+        name: listracecontrol
+        description: Race control messages, flags, and incidents
+        call: openf1.listracecontrol
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /team_radio
+      name: listteamradio
+      operations:
+      - method: GET
+        name: listteamradio
+        description: List team radio recordings
+        call: openf1.listteamradio
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: openf1-mcp
+    transport: http
+    description: MCP adapter for OpenF1 API for AI agent use.
+    tools:
+    - name: listsessions
+      description: List F1 sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listsessions
+      with:
+        session_key: tools.session_key
+        meeting_key: tools.meeting_key
+        year: tools.year
+        country_name: tools.country_name
+        session_type: tools.session_type
+        session_name: tools.session_name
+        circuit_short_name: tools.circuit_short_name
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: meeting_key
+        type: integer
+        description: meeting_key
+      - name: year
+        type: integer
+        description: year
+      - name: country_name
+        type: string
+        description: country_name
+      - name: session_type
+        type: string
+        description: session_type
+      - name: session_name
+        type: string
+        description: session_name
+      - name: circuit_short_name
+        type: string
+        description: circuit_short_name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listmeetings
+      description: List Grand Prix meetings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listmeetings
+      with:
+        meeting_key: tools.meeting_key
+        year: tools.year
+        country_name: tools.country_name
+        circuit_short_name: tools.circuit_short_name
+      inputParameters:
+      - name: meeting_key
+        type: integer
+        description: meeting_key
+      - name: year
+        type: integer
+        description: year
+      - name: country_name
+        type: string
+        description: country_name
+      - name: circuit_short_name
+        type: string
+        description: circuit_short_name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdrivers
+      description: List drivers for a session
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listdrivers
+      with:
+        session_key: tools.session_key
+        meeting_key: tools.meeting_key
+        driver_number: tools.driver_number
+        team_name: tools.team_name
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: meeting_key
+        type: integer
+        description: meeting_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      - name: team_name
+        type: string
+        description: team_name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listlaps
+      description: List laps with sector and speed-trap times
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listlaps
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        lap_number: tools.lap_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      - name: lap_number
+        type: integer
+        description: lap_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcardata
+      description: High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.getcardata
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        speed: tools.speed
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      - name: speed
+        type: integer
+        description: speed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getlocation
+      description: Three-dimensional car location on track
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.getlocation
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getposition
+      description: Driver running order during a session
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.getposition
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        position: tools.position
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      - name: position
+        type: integer
+        description: position
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getintervals
+      description: Real-time intervals between drivers (race only)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.getintervals
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpitstops
+      description: List pit-lane events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listpitstops
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: liststints
+      description: List tyre stints with compound and age
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.liststints
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getweather
+      description: Track weather conditions during a session
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.getweather
+      with:
+        session_key: tools.session_key
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listracecontrol
+      description: Race control messages, flags, and incidents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listracecontrol
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        category: tools.category
+        flag: tools.flag
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      - name: category
+        type: string
+        description: category
+      - name: flag
+        type: string
+        description: flag
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listteamradio
+      description: List team radio recordings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1.listteamradio
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      inputParameters:
+      - name: session_key
+        type: integer
+        description: session_key
+      - name: driver_number
+        type: integer
+        description: driver_number
+      outputParameters:
+      - type: object
+        mapping: $.
