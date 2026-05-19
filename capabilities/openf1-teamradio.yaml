@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — TeamRadio
+  description: 'OpenF1 API — TeamRadio. 1 operations. Lead operation: List team radio recordings. Self-contained Naftiko capability
+    covering one Openf1 business surface.'
+  tags:
+  - Openf1
+  - TeamRadio
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-teamradio
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — TeamRadio business capability. Self-contained, no shared references.
+    resources:
+    - name: team_radio
+      path: /team_radio
+      operations:
+      - name: listteamradio
+        method: GET
+        description: List team radio recordings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: openf1-teamradio-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — TeamRadio. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/team-radio
+      name: team-radio
+      description: REST surface for team_radio.
+      operations:
+      - method: GET
+        name: listteamradio
+        description: List team radio recordings
+        call: openf1-teamradio.listteamradio
+        with:
+          session_key: rest.session_key
+          driver_number: rest.driver_number
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-teamradio-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — TeamRadio. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-team-radio-recordings
+      description: List team radio recordings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-teamradio.listteamradio
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+      outputParameters:
+      - type: object
+        mapping: $.

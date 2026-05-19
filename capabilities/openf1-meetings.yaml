@@ -1,0 +1,90 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — Meetings
+  description: 'OpenF1 API — Meetings. 1 operations. Lead operation: List Grand Prix meetings. Self-contained Naftiko capability
+    covering one Openf1 business surface.'
+  tags:
+  - Openf1
+  - Meetings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-meetings
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — Meetings business capability. Self-contained, no shared references.
+    resources:
+    - name: meetings
+      path: /meetings
+      operations:
+      - name: listmeetings
+        method: GET
+        description: List Grand Prix meetings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meeting_key
+          in: query
+          type: integer
+        - name: year
+          in: query
+          type: integer
+        - name: country_name
+          in: query
+          type: string
+        - name: circuit_short_name
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: openf1-meetings-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — Meetings. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/meetings
+      name: meetings
+      description: REST surface for meetings.
+      operations:
+      - method: GET
+        name: listmeetings
+        description: List Grand Prix meetings
+        call: openf1-meetings.listmeetings
+        with:
+          meeting_key: rest.meeting_key
+          year: rest.year
+          country_name: rest.country_name
+          circuit_short_name: rest.circuit_short_name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-meetings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — Meetings. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-grand-prix-meetings
+      description: List Grand Prix meetings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-meetings.listmeetings
+      with:
+        meeting_key: tools.meeting_key
+        year: tools.year
+        country_name: tools.country_name
+        circuit_short_name: tools.circuit_short_name
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,90 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — RaceControl
+  description: 'OpenF1 API — RaceControl. 1 operations. Lead operation: Race control messages, flags, and incidents. Self-contained
+    Naftiko capability covering one Openf1 business surface.'
+  tags:
+  - Openf1
+  - RaceControl
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-racecontrol
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — RaceControl business capability. Self-contained, no shared references.
+    resources:
+    - name: race_control
+      path: /race_control
+      operations:
+      - name: listracecontrol
+        method: GET
+        description: Race control messages, flags, and incidents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: category
+          in: query
+          type: string
+        - name: flag
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: openf1-racecontrol-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — RaceControl. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/race-control
+      name: race-control
+      description: REST surface for race_control.
+      operations:
+      - method: GET
+        name: listracecontrol
+        description: Race control messages, flags, and incidents
+        call: openf1-racecontrol.listracecontrol
+        with:
+          session_key: rest.session_key
+          driver_number: rest.driver_number
+          category: rest.category
+          flag: rest.flag
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-racecontrol-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — RaceControl. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: race-control-messages-flags-and
+      description: Race control messages, flags, and incidents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-racecontrol.listracecontrol
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        category: tools.category
+        flag: tools.flag
+      outputParameters:
+      - type: object
+        mapping: $.

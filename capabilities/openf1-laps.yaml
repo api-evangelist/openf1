@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — Laps
+  description: 'OpenF1 API — Laps. 1 operations. Lead operation: List laps with sector and speed-trap times. Self-contained
+    Naftiko capability covering one Openf1 business surface.'
+  tags:
+  - Openf1
+  - Laps
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-laps
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — Laps business capability. Self-contained, no shared references.
+    resources:
+    - name: laps
+      path: /laps
+      operations:
+      - name: listlaps
+        method: GET
+        description: List laps with sector and speed-trap times
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: driver_number
+          in: query
+          type: integer
+        - name: lap_number
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: openf1-laps-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — Laps. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/laps
+      name: laps
+      description: REST surface for laps.
+      operations:
+      - method: GET
+        name: listlaps
+        description: List laps with sector and speed-trap times
+        call: openf1-laps.listlaps
+        with:
+          session_key: rest.session_key
+          driver_number: rest.driver_number
+          lap_number: rest.lap_number
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-laps-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — Laps. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-laps-sector-and-speed
+      description: List laps with sector and speed-trap times
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-laps.listlaps
+      with:
+        session_key: tools.session_key
+        driver_number: tools.driver_number
+        lap_number: tools.lap_number
+      outputParameters:
+      - type: object
+        mapping: $.

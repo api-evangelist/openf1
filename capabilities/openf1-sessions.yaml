@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — Sessions
+  description: 'OpenF1 API — Sessions. 1 operations. Lead operation: List F1 sessions. Self-contained Naftiko capability covering
+    one Openf1 business surface.'
+  tags:
+  - Openf1
+  - Sessions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-sessions
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — Sessions business capability. Self-contained, no shared references.
+    resources:
+    - name: sessions
+      path: /sessions
+      operations:
+      - name: listsessions
+        method: GET
+        description: List F1 sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+        - name: meeting_key
+          in: query
+          type: integer
+        - name: year
+          in: query
+          type: integer
+        - name: country_name
+          in: query
+          type: string
+        - name: session_type
+          in: query
+          type: string
+        - name: session_name
+          in: query
+          type: string
+        - name: circuit_short_name
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: openf1-sessions-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — Sessions. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/sessions
+      name: sessions
+      description: REST surface for sessions.
+      operations:
+      - method: GET
+        name: listsessions
+        description: List F1 sessions
+        call: openf1-sessions.listsessions
+        with:
+          session_key: rest.session_key
+          meeting_key: rest.meeting_key
+          year: rest.year
+          country_name: rest.country_name
+          session_type: rest.session_type
+          session_name: rest.session_name
+          circuit_short_name: rest.circuit_short_name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-sessions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — Sessions. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-f1-sessions
+      description: List F1 sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-sessions.listsessions
+      with:
+        session_key: tools.session_key
+        meeting_key: tools.meeting_key
+        year: tools.year
+        country_name: tools.country_name
+        session_type: tools.session_type
+        session_name: tools.session_name
+        circuit_short_name: tools.circuit_short_name
+      outputParameters:
+      - type: object
+        mapping: $.

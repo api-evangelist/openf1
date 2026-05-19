@@ -1,0 +1,75 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenF1 API — Weather
+  description: 'OpenF1 API — Weather. 1 operations. Lead operation: Track weather conditions during a session. Self-contained
+    Naftiko capability covering one Openf1 business surface.'
+  tags:
+  - Openf1
+  - Weather
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENF1_API_KEY: OPENF1_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openf1-weather
+    baseUri: https://api.openf1.org/v1
+    description: OpenF1 API — Weather business capability. Self-contained, no shared references.
+    resources:
+    - name: weather
+      path: /weather
+      operations:
+      - name: getweather
+        method: GET
+        description: Track weather conditions during a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: session_key
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: openf1-weather-rest
+    port: 8080
+    description: REST adapter for OpenF1 API — Weather. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/weather
+      name: weather
+      description: REST surface for weather.
+      operations:
+      - method: GET
+        name: getweather
+        description: Track weather conditions during a session
+        call: openf1-weather.getweather
+        with:
+          session_key: rest.session_key
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openf1-weather-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenF1 API — Weather. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: track-weather-conditions-during-session
+      description: Track weather conditions during a session
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openf1-weather.getweather
+      with:
+        session_key: tools.session_key
+      outputParameters:
+      - type: object
+        mapping: $.
