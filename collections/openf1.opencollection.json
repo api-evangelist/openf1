@@ -1,0 +1,462 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List F1 sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/sessions",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "meeting_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "circuit_short_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides information about sessions (practice, qualifying, sprint, race)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Grand Prix meetings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/meetings",
+            "params": [
+              {
+                "name": "meeting_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "circuit_short_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Grand Prix meetings"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Drivers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List drivers for a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/drivers",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "meeting_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List drivers for a session"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Laps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List laps with sector and speed-trap times",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/laps",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lap_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List laps with sector and speed-trap times"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Telemetry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/car_data",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "speed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)"
+        },
+        {
+          "info": {
+            "name": "Three-dimensional car location on track",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/location",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Three-dimensional car location on track"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Position",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Driver running order during a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/position",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Driver running order during a session"
+        },
+        {
+          "info": {
+            "name": "Real-time intervals between drivers (race only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/intervals",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Real-time intervals between drivers (race only)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pit-lane events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/pit",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List pit-lane events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tyre stints with compound and age",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/stints",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List tyre stints with compound and age"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Weather",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Track weather conditions during a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/weather",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Track weather conditions during a session"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RaceControl",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Race control messages, flags, and incidents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/race_control",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "flag",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Race control messages, flags, and incidents"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TeamRadio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List team radio recordings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/team_radio",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List team radio recordings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
