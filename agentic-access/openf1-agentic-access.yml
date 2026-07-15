@@ -1,0 +1,144 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/openf1-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 13
+  by_action_class:
+    connected: 13
+  by_consequence:
+    read: 13
+  human_in_the_loop_required: 0
+operations:
+- path: /sessions
+  method: get
+  operationId: listSessions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /meetings
+  method: get
+  operationId: listMeetings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drivers
+  method: get
+  operationId: listDrivers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /laps
+  method: get
+  operationId: listLaps
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /car_data
+  method: get
+  operationId: getCarData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /location
+  method: get
+  operationId: getLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /position
+  method: get
+  operationId: getPosition
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /intervals
+  method: get
+  operationId: getIntervals
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pit
+  method: get
+  operationId: listPitStops
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /stints
+  method: get
+  operationId: listStints
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /weather
+  method: get
+  operationId: getWeather
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /race_control
+  method: get
+  operationId: listRaceControl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /team_radio
+  method: get
+  operationId: listTeamRadio
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

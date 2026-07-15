@@ -46,6 +46,8 @@ apis:
       - type: JSONLD
         url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/openf1-agentic-access.yml
   - type: DomainSecurity
     url: security/openf1-domain-security.yml
   - type: Documentation
