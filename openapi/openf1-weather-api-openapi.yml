@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: OpenF1 Drivers Weather API
+  description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.
+  version: '1.0'
+  contact:
+    name: OpenF1
+    url: https://openf1.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+- url: https://api.openf1.org/v1
+  description: OpenF1 Production API
+tags:
+- name: Weather
+paths:
+  /weather:
+    get:
+      operationId: getWeather
+      summary: Track weather conditions during a session
+      tags:
+      - Weather
+      parameters:
+      - name: session_key
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Weather'
+components:
+  schemas:
+    Weather:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        air_temperature:
+          type: number
+        track_temperature:
+          type: number
+        humidity:
+          type: number
+        pressure:
+          type: number
+        rainfall:
+          type: integer
+        wind_direction:
+          type: integer
+        wind_speed:
+          type: number
+externalDocs:
+  description: OpenF1 API Documentation
+  url: https://openf1.org/

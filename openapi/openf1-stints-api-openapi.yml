@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: OpenF1 Drivers Stints API
+  description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.
+  version: '1.0'
+  contact:
+    name: OpenF1
+    url: https://openf1.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+- url: https://api.openf1.org/v1
+  description: OpenF1 Production API
+tags:
+- name: Stints
+paths:
+  /stints:
+    get:
+      operationId: listStints
+      summary: List tyre stints with compound and age
+      tags:
+      - Stints
+      parameters:
+      - name: session_key
+        in: query
+        schema:
+          type: integer
+      - name: driver_number
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Stint'
+components:
+  schemas:
+    Stint:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        driver_number:
+          type: integer
+        stint_number:
+          type: integer
+        lap_start:
+          type: integer
+        lap_end:
+          type: integer
+        compound:
+          type: string
+        tyre_age_at_start:
+          type: integer
+externalDocs:
+  description: OpenF1 API Documentation
+  url: https://openf1.org/

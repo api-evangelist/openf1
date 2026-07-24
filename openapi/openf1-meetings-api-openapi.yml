@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: OpenF1 Drivers Meetings API
+  description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.
+  version: '1.0'
+  contact:
+    name: OpenF1
+    url: https://openf1.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+- url: https://api.openf1.org/v1
+  description: OpenF1 Production API
+tags:
+- name: Meetings
+paths:
+  /meetings:
+    get:
+      operationId: listMeetings
+      summary: List Grand Prix meetings
+      tags:
+      - Meetings
+      parameters:
+      - name: meeting_key
+        in: query
+        schema:
+          type: integer
+      - name: year
+        in: query
+        schema:
+          type: integer
+      - name: country_name
+        in: query
+        schema:
+          type: string
+      - name: circuit_short_name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Meeting'
+components:
+  schemas:
+    Meeting:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        meeting_name:
+          type: string
+        meeting_official_name:
+          type: string
+        date_start:
+          type: string
+          format: date-time
+        circuit_key:
+          type: integer
+        circuit_short_name:
+          type: string
+        country_key:
+          type: integer
+        country_code:
+          type: string
+        country_name:
+          type: string
+        location:
+          type: string
+        gmt_offset:
+          type: string
+        year:
+          type: integer
+externalDocs:
+  description: OpenF1 API Documentation
+  url: https://openf1.org/

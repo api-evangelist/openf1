@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: OpenF1 Drivers Pit API
+  description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.
+  version: '1.0'
+  contact:
+    name: OpenF1
+    url: https://openf1.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+- url: https://api.openf1.org/v1
+  description: OpenF1 Production API
+tags:
+- name: Pit
+paths:
+  /pit:
+    get:
+      operationId: listPitStops
+      summary: List pit-lane events
+      tags:
+      - Pit
+      parameters:
+      - name: session_key
+        in: query
+        schema:
+          type: integer
+      - name: driver_number
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PitStop'
+components:
+  schemas:
+    PitStop:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        driver_number:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        lap_number:
+          type: integer
+        pit_duration:
+          type: number
+        stop_duration:
+          type: number
+          nullable: true
+        lane_duration:
+          type: number
+externalDocs:
+  description: OpenF1 API Documentation
+  url: https://openf1.org/
