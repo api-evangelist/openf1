@@ -1,0 +1,394 @@
+openapi: 3.1.0
+info:
+  title: OpenF1 API
+  description: >-
+    OpenF1 is a free and open-source API providing real-time and historical
+    Formula 1 data including car telemetry, lap timing, race control, weather,
+    pit stops, team radio, and championship standings.
+  version: '1.0'
+  contact:
+    name: OpenF1
+    url: https://openf1.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+externalDocs:
+  description: OpenF1 API Documentation
+  url: https://openf1.org/
+servers:
+  - url: https://api.openf1.org/v1
+    description: OpenF1 Production API
+tags:
+  - name: Sessions
+  - name: Meetings
+  - name: Drivers
+  - name: Laps
+  - name: Telemetry
+  - name: Position
+  - name: Pit
+  - name: Stints
+  - name: Weather
+  - name: RaceControl
+  - name: TeamRadio
+paths:
+  /sessions:
+    get:
+      operationId: listSessions
+      summary: List F1 sessions
+      description: Provides information about sessions (practice, qualifying, sprint, race).
+      tags: [Sessions]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: meeting_key, in: query, schema: {type: integer}}
+        - {name: year, in: query, schema: {type: integer}}
+        - {name: country_name, in: query, schema: {type: string}}
+        - {name: session_type, in: query, schema: {type: string}}
+        - {name: session_name, in: query, schema: {type: string}}
+        - {name: circuit_short_name, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Session'}}
+  /meetings:
+    get:
+      operationId: listMeetings
+      summary: List Grand Prix meetings
+      tags: [Meetings]
+      parameters:
+        - {name: meeting_key, in: query, schema: {type: integer}}
+        - {name: year, in: query, schema: {type: integer}}
+        - {name: country_name, in: query, schema: {type: string}}
+        - {name: circuit_short_name, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Meeting'}}
+  /drivers:
+    get:
+      operationId: listDrivers
+      summary: List drivers for a session
+      tags: [Drivers]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: meeting_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+        - {name: team_name, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Driver'}}
+  /laps:
+    get:
+      operationId: listLaps
+      summary: List laps with sector and speed-trap times
+      tags: [Laps]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+        - {name: lap_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Lap'}}
+  /car_data:
+    get:
+      operationId: getCarData
+      summary: High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)
+      tags: [Telemetry]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+        - {name: speed, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/CarData'}}
+  /location:
+    get:
+      operationId: getLocation
+      summary: Three-dimensional car location on track
+      tags: [Telemetry]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Location'}}
+  /position:
+    get:
+      operationId: getPosition
+      summary: Driver running order during a session
+      tags: [Position]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+        - {name: position, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Position'}}
+  /intervals:
+    get:
+      operationId: getIntervals
+      summary: Real-time intervals between drivers (race only)
+      tags: [Position]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Interval'}}
+  /pit:
+    get:
+      operationId: listPitStops
+      summary: List pit-lane events
+      tags: [Pit]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/PitStop'}}
+  /stints:
+    get:
+      operationId: listStints
+      summary: List tyre stints with compound and age
+      tags: [Stints]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Stint'}}
+  /weather:
+    get:
+      operationId: getWeather
+      summary: Track weather conditions during a session
+      tags: [Weather]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Weather'}}
+  /race_control:
+    get:
+      operationId: listRaceControl
+      summary: Race control messages, flags, and incidents
+      tags: [RaceControl]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+        - {name: category, in: query, schema: {type: string}}
+        - {name: flag, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/RaceControlMessage'}}
+  /team_radio:
+    get:
+      operationId: listTeamRadio
+      summary: List team radio recordings
+      tags: [TeamRadio]
+      parameters:
+        - {name: session_key, in: query, schema: {type: integer}}
+        - {name: driver_number, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/TeamRadio'}}
+components:
+  schemas:
+    Session:
+      type: object
+      properties:
+        session_key: {type: integer}
+        session_name: {type: string}
+        session_type: {type: string}
+        date_start: {type: string, format: date-time}
+        date_end: {type: string, format: date-time}
+        meeting_key: {type: integer}
+        circuit_key: {type: integer}
+        circuit_short_name: {type: string}
+        country_key: {type: integer}
+        country_code: {type: string}
+        country_name: {type: string}
+        location: {type: string}
+        gmt_offset: {type: string}
+        year: {type: integer}
+        is_cancelled: {type: boolean}
+    Meeting:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        meeting_name: {type: string}
+        meeting_official_name: {type: string}
+        date_start: {type: string, format: date-time}
+        circuit_key: {type: integer}
+        circuit_short_name: {type: string}
+        country_key: {type: integer}
+        country_code: {type: string}
+        country_name: {type: string}
+        location: {type: string}
+        gmt_offset: {type: string}
+        year: {type: integer}
+    Driver:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        broadcast_name: {type: string}
+        full_name: {type: string}
+        name_acronym: {type: string}
+        team_name: {type: string}
+        team_colour: {type: string}
+        first_name: {type: string}
+        last_name: {type: string}
+        headshot_url: {type: string, format: uri}
+        country_code: {type: string}
+    Lap:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        lap_number: {type: integer}
+        date_start: {type: string, format: date-time}
+        duration_sector_1: {type: number}
+        duration_sector_2: {type: number}
+        duration_sector_3: {type: number}
+        i1_speed: {type: integer}
+        i2_speed: {type: integer}
+        st_speed: {type: integer}
+        is_pit_out_lap: {type: boolean}
+        lap_duration: {type: number}
+        segments_sector_1: {type: array, items: {type: integer}}
+        segments_sector_2: {type: array, items: {type: integer}}
+        segments_sector_3: {type: array, items: {type: integer}}
+    CarData:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        rpm: {type: integer}
+        speed: {type: integer}
+        n_gear: {type: integer}
+        throttle: {type: integer}
+        brake: {type: integer}
+        drs: {type: integer}
+    Location:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        x: {type: number}
+        y: {type: number}
+        z: {type: number}
+    Position:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        position: {type: integer}
+    Interval:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        gap_to_leader: {type: number}
+        interval: {type: number}
+    PitStop:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        lap_number: {type: integer}
+        pit_duration: {type: number}
+        stop_duration: {type: number, nullable: true}
+        lane_duration: {type: number}
+    Stint:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        stint_number: {type: integer}
+        lap_start: {type: integer}
+        lap_end: {type: integer}
+        compound: {type: string}
+        tyre_age_at_start: {type: integer}
+    Weather:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        date: {type: string, format: date-time}
+        air_temperature: {type: number}
+        track_temperature: {type: number}
+        humidity: {type: number}
+        pressure: {type: number}
+        rainfall: {type: integer}
+        wind_direction: {type: integer}
+        wind_speed: {type: number}
+    RaceControlMessage:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer, nullable: true}
+        date: {type: string, format: date-time}
+        category: {type: string}
+        flag: {type: string, nullable: true}
+        lap_number: {type: integer, nullable: true}
+        message: {type: string}
+        scope: {type: string, nullable: true}
+        sector: {type: integer, nullable: true}
+    TeamRadio:
+      type: object
+      properties:
+        meeting_key: {type: integer}
+        session_key: {type: integer}
+        driver_number: {type: integer}
+        date: {type: string, format: date-time}
+        recording_url: {type: string, format: uri}
