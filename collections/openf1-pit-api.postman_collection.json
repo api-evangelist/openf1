@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "9b20e97f-a697-45a5-9274-0989175b7fb7",
+      "name": "Pit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cc2ce615-fee9-4bf4-aaa0-6d27cc1364f3",
+          "name": "List pit-lane events",
+          "request": {
+            "name": "List pit-lane events",
+            "description": {},
+            "url": {
+              "path": [
+                "pit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aba97012-31fb-490c-a028-87cab7a74b59",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 2024,\n    \"session_key\": 448,\n    \"driver_number\": 7093,\n    \"date\": \"2005-10-08T13:48:47.880Z\",\n    \"lap_number\": 1020,\n    \"pit_duration\": 9501.110802710622,\n    \"stop_duration\": 9763.840777745565,\n    \"lane_duration\": 774.8893672045442\n  },\n  {\n    \"meeting_key\": 3308,\n    \"session_key\": 7820,\n    \"driver_number\": 5878,\n    \"date\": \"2022-02-27T13:31:54.574Z\",\n    \"lap_number\": 5294,\n    \"pit_duration\": 3076.1066649291224,\n    \"stop_duration\": 3700.5868739784087,\n    \"lane_duration\": 1033.1168972759751\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9c726db1-3b87-4e1f-b2ed-1c27ad4109c5",
+    "name": "OpenF1 Drivers Pit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

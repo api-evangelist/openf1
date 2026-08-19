@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "49d84e66-3927-4de1-a3ce-05151bd77206",
+      "name": "Weather",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "52d908b3-e8f8-434d-8ad2-a339f6c4e5c7",
+          "name": "Track weather conditions during a session",
+          "request": {
+            "name": "Track weather conditions during a session",
+            "description": {},
+            "url": {
+              "path": [
+                "weather"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a459b1b-8a38-4426-a9b0-dc5fec369e91",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "weather"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 1749,\n    \"session_key\": 271,\n    \"date\": \"1984-04-13T23:18:48.547Z\",\n    \"air_temperature\": 8754.391119074407,\n    \"track_temperature\": 5700.168156201388,\n    \"humidity\": 8296.126529505606,\n    \"pressure\": 3663.7787701234715,\n    \"rainfall\": 4480,\n    \"wind_direction\": 576,\n    \"wind_speed\": 3527.4533873609935\n  },\n  {\n    \"meeting_key\": 8246,\n    \"session_key\": 7816,\n    \"date\": \"1952-02-08T10:53:50.801Z\",\n    \"air_temperature\": 824.0085001955455,\n    \"track_temperature\": 4902.924941263726,\n    \"humidity\": 4785.650790139721,\n    \"pressure\": 4771.131685881336,\n    \"rainfall\": 1470,\n    \"wind_direction\": 7780,\n    \"wind_speed\": 4028.6545771210867\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "20d1fc6c-268d-479e-bee4-554e90b63720",
+    "name": "OpenF1 Drivers Weather API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

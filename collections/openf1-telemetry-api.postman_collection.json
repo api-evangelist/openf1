@@ -1,0 +1,215 @@
+{
+  "item": [
+    {
+      "id": "17517038-83b1-4f12-ba53-3e3d0fd75dbd",
+      "name": "Telemetry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c0b5063-4d91-48b2-b09d-ae212d0510ab",
+          "name": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)",
+          "request": {
+            "name": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)",
+            "description": {},
+            "url": {
+              "path": [
+                "car_data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "speed",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b42e857-8f29-42f2-b0c0-32d0d58b66cd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "car_data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "speed",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 6312,\n    \"session_key\": 6119,\n    \"driver_number\": 253,\n    \"date\": \"1976-09-02T23:28:40.302Z\",\n    \"rpm\": 678,\n    \"speed\": 1523,\n    \"n_gear\": 1097,\n    \"throttle\": 7915,\n    \"brake\": 7119,\n    \"drs\": 2489\n  },\n  {\n    \"meeting_key\": 2769,\n    \"session_key\": 2258,\n    \"driver_number\": 4127,\n    \"date\": \"1951-12-21T02:44:14.067Z\",\n    \"rpm\": 4821,\n    \"speed\": 8927,\n    \"n_gear\": 1326,\n    \"throttle\": 3931,\n    \"brake\": 5633,\n    \"drs\": 9952\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c8094aa-9f0f-4b1e-8f20-b86080c5354c",
+          "name": "Three-dimensional car location on track",
+          "request": {
+            "name": "Three-dimensional car location on track",
+            "description": {},
+            "url": {
+              "path": [
+                "location"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7189efaa-07c5-4a9f-aff1-4da84663dc96",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "location"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 3657,\n    \"session_key\": 3181,\n    \"driver_number\": 1476,\n    \"date\": \"2013-01-12T01:44:10.944Z\",\n    \"x\": 6868.244812992955,\n    \"y\": 8625.052831825366,\n    \"z\": 1573.6292692974018\n  },\n  {\n    \"meeting_key\": 9891,\n    \"session_key\": 7049,\n    \"driver_number\": 9612,\n    \"date\": \"1949-04-30T00:16:06.890Z\",\n    \"x\": 472.7693016591572,\n    \"y\": 968.9777185441495,\n    \"z\": 1633.2001617532399\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f1cf76a1-0b82-4207-99b7-52cba1bf2d6f",
+    "name": "OpenF1 Drivers Telemetry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Weather API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Weather",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Track weather conditions during a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/weather",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Track weather conditions during a session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

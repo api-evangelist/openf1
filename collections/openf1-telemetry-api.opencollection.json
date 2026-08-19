@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Telemetry API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Telemetry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/car_data",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "speed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "High-frequency car telemetry (RPM, throttle, brake, gear, speed, DRS)"
+        },
+        {
+          "info": {
+            "name": "Three-dimensional car location on track",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/location",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Three-dimensional car location on track"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

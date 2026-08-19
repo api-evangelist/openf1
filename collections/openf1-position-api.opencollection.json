@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Position API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Position",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Driver running order during a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/position",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Driver running order during a session"
+        },
+        {
+          "info": {
+            "name": "Real-time intervals between drivers (race only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/intervals",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Real-time intervals between drivers (race only)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

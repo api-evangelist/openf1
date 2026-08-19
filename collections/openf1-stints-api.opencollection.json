@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Stints API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tyre stints with compound and age",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/stints",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List tyre stints with compound and age"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

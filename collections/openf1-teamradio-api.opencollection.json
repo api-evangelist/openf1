@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers TeamRadio API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TeamRadio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List team radio recordings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/team_radio",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List team radio recordings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

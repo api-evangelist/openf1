@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers RaceControl API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RaceControl",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Race control messages, flags, and incidents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/race_control",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "flag",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Race control messages, flags, and incidents"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,128 @@
+{
+  "item": [
+    {
+      "id": "4a15473a-9840-49ab-af1a-b493518d43ca",
+      "name": "Laps",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5c95c7ca-152b-4085-b21f-548d6e060056",
+          "name": "List laps with sector and speed-trap times",
+          "request": {
+            "name": "List laps with sector and speed-trap times",
+            "description": {},
+            "url": {
+              "path": [
+                "laps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lap_number",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2a1844a-8e0a-45e7-88e0-262742e86cd4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "laps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "lap_number",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 7128,\n    \"session_key\": 3467,\n    \"driver_number\": 4336,\n    \"lap_number\": 2372,\n    \"date_start\": \"2013-07-16T20:22:06.409Z\",\n    \"duration_sector_1\": 8009.354408895083,\n    \"duration_sector_2\": 427.7722424611086,\n    \"duration_sector_3\": 3023.04552572366,\n    \"i1_speed\": 1345,\n    \"i2_speed\": 2802,\n    \"st_speed\": 104,\n    \"is_pit_out_lap\": true,\n    \"lap_duration\": 4654.630020459543,\n    \"segments_sector_1\": [\n      8573,\n      4610\n    ],\n    \"segments_sector_2\": [\n      4210,\n      3692\n    ],\n    \"segments_sector_3\": [\n      6930,\n      1737\n    ]\n  },\n  {\n    \"meeting_key\": 5294,\n    \"session_key\": 2055,\n    \"driver_number\": 3193,\n    \"lap_number\": 9189,\n    \"date_start\": \"1966-04-19T07:23:15.834Z\",\n    \"duration_sector_1\": 6551.876288539907,\n    \"duration_sector_2\": 3314.3823468854716,\n    \"duration_sector_3\": 2674.7530972103295,\n    \"i1_speed\": 4540,\n    \"i2_speed\": 464,\n    \"st_speed\": 3604,\n    \"is_pit_out_lap\": true,\n    \"lap_duration\": 8362.975581832674,\n    \"segments_sector_1\": [\n      711,\n      8051\n    ],\n    \"segments_sector_2\": [\n      8025,\n      8773\n    ],\n    \"segments_sector_3\": [\n      3694,\n      5548\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2a49f91d-c63b-430f-b21e-4b5eda08e7f8",
+    "name": "OpenF1 Drivers Laps API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

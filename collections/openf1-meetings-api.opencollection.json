@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Meetings API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Grand Prix meetings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/meetings",
+            "params": [
+              {
+                "name": "meeting_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "circuit_short_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Grand Prix meetings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

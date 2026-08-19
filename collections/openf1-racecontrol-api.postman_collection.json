@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "cf46147f-d671-4484-b459-2d08c43fbc87",
+      "name": "RaceControl",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "28fa2806-9b9b-405b-972f-a6c6d692cce7",
+          "name": "Race control messages, flags, and incidents",
+          "request": {
+            "name": "Race control messages, flags, and incidents",
+            "description": {},
+            "url": {
+              "path": [
+                "race_control"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "flag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7195644b-6bf0-4cec-84c8-a7ad1dd420da",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "race_control"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 2208,\n    \"session_key\": 2852,\n    \"driver_number\": 831,\n    \"date\": \"2004-06-05T11:47:35.019Z\",\n    \"category\": \"string\",\n    \"flag\": \"string\",\n    \"lap_number\": 9455,\n    \"message\": \"string\",\n    \"scope\": \"string\",\n    \"sector\": 7191\n  },\n  {\n    \"meeting_key\": 1357,\n    \"session_key\": 6611,\n    \"driver_number\": 4556,\n    \"date\": \"1949-04-13T04:08:30.850Z\",\n    \"category\": \"string\",\n    \"flag\": \"string\",\n    \"lap_number\": 2649,\n    \"message\": \"string\",\n    \"scope\": \"string\",\n    \"sector\": 8394\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ecb2f2dc-8d25-4ea5-9e9f-91d0464da3f2",
+    "name": "OpenF1 Drivers RaceControl API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

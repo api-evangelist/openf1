@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Pit API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pit-lane events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/pit",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver_number",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List pit-lane events"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

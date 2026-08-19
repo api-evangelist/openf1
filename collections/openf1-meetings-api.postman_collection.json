@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "5f5143c4-c167-4630-9a37-90b78d784831",
+      "name": "Meetings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10ec9bc6-1e47-4421-8242-400b90cd9ea4",
+          "name": "List Grand Prix meetings",
+          "request": {
+            "name": "List Grand Prix meetings",
+            "description": {},
+            "url": {
+              "path": [
+                "meetings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "meeting_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "circuit_short_name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00b4af97-38c1-4755-b77d-8394fcf358b9",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "meeting_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "country_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "circuit_short_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 4894,\n    \"meeting_name\": \"string\",\n    \"meeting_official_name\": \"string\",\n    \"date_start\": \"2020-03-21T06:23:07.589Z\",\n    \"circuit_key\": 183,\n    \"circuit_short_name\": \"string\",\n    \"country_key\": 4555,\n    \"country_code\": \"string\",\n    \"country_name\": \"string\",\n    \"location\": \"string\",\n    \"gmt_offset\": \"string\",\n    \"year\": 1653\n  },\n  {\n    \"meeting_key\": 8994,\n    \"meeting_name\": \"string\",\n    \"meeting_official_name\": \"string\",\n    \"date_start\": \"2018-05-31T21:11:03.083Z\",\n    \"circuit_key\": 3129,\n    \"circuit_short_name\": \"string\",\n    \"country_key\": 1624,\n    \"country_code\": \"string\",\n    \"country_name\": \"string\",\n    \"location\": \"string\",\n    \"gmt_offset\": \"string\",\n    \"year\": 8078\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f8f435ca-c4c7-47b5-a91c-2c8146968a3c",
+    "name": "OpenF1 Drivers Meetings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

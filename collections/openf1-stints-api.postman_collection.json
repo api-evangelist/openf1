@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "3879f0ff-bb74-43b4-93d5-d6220a3584d3",
+      "name": "Stints",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d6656a3-ee67-4c07-8207-2df80599ac35",
+          "name": "List tyre stints with compound and age",
+          "request": {
+            "name": "List tyre stints with compound and age",
+            "description": {},
+            "url": {
+              "path": [
+                "stints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46239c97-663c-42e9-9dcb-6230a196ecb8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 6085,\n    \"session_key\": 4025,\n    \"driver_number\": 7611,\n    \"stint_number\": 7324,\n    \"lap_start\": 2763,\n    \"lap_end\": 7839,\n    \"compound\": \"string\",\n    \"tyre_age_at_start\": 49\n  },\n  {\n    \"meeting_key\": 632,\n    \"session_key\": 5337,\n    \"driver_number\": 6897,\n    \"stint_number\": 1560,\n    \"lap_start\": 3516,\n    \"lap_end\": 1959,\n    \"compound\": \"string\",\n    \"tyre_age_at_start\": 7324\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9a06d8b1-148e-4100-ac51-a5892695d8b2",
+    "name": "OpenF1 Drivers Stints API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "4e1733c8-d5b1-46d4-baa7-0f76aa17e32c",
+      "name": "TeamRadio",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "810ddcb7-b462-4a82-afcc-3b6cfdd23558",
+          "name": "List team radio recordings",
+          "request": {
+            "name": "List team radio recordings",
+            "description": {},
+            "url": {
+              "path": [
+                "team_radio"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "driver_number",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d50a845-fddc-4e40-b01f-0d97e8743efb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "team_radio"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "driver_number",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meeting_key\": 5919,\n    \"session_key\": 6574,\n    \"driver_number\": 1199,\n    \"date\": \"1954-11-14T17:26:40.242Z\",\n    \"recording_url\": \"https://ZmeVkEwravlHURlRYZdFeWPdRoUHR.axxTTgU3G2OkGWTB0MemTV\"\n  },\n  {\n    \"meeting_key\": 231,\n    \"session_key\": 7194,\n    \"driver_number\": 5590,\n    \"date\": \"2012-08-22T01:40:13.858Z\",\n    \"recording_url\": \"http://mPNgQq.cis78V89c0UL9WtAbRvC5\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a7aec378-7fef-4aed-ae0c-242664148d29",
+    "name": "OpenF1 Drivers TeamRadio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}

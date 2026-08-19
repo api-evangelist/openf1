@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenF1 Drivers Sessions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List F1 sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openf1.org/v1/sessions",
+            "params": [
+              {
+                "name": "session_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "meeting_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "circuit_short_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Provides information about sessions (practice, qualifying, sprint, race)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

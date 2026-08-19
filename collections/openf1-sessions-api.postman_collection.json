@@ -1,0 +1,167 @@
+{
+  "item": [
+    {
+      "id": "253ec9c3-41fa-43f9-976d-3a4478d7183d",
+      "name": "Sessions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70c49b2b-3b57-49a4-b7a2-88d2deb62f1f",
+          "name": "List F1 sessions",
+          "request": {
+            "name": "List F1 sessions",
+            "description": {
+              "content": "Provides information about sessions (practice, qualifying, sprint, race).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "session_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "meeting_key",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "session_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "session_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "circuit_short_name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8839ab2e-02c6-4eb0-8ee9-66d9781e1bc1",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "session_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "meeting_key",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "country_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "session_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "session_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "circuit_short_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"session_key\": 7293,\n    \"session_name\": \"string\",\n    \"session_type\": \"string\",\n    \"date_start\": \"2017-10-02T14:48:17.330Z\",\n    \"date_end\": \"1988-11-30T02:08:01.597Z\",\n    \"meeting_key\": 1317,\n    \"circuit_key\": 3961,\n    \"circuit_short_name\": \"string\",\n    \"country_key\": 2391,\n    \"country_code\": \"string\",\n    \"country_name\": \"string\",\n    \"location\": \"string\",\n    \"gmt_offset\": \"string\",\n    \"year\": 5834,\n    \"is_cancelled\": true\n  },\n  {\n    \"session_key\": 5455,\n    \"session_name\": \"string\",\n    \"session_type\": \"string\",\n    \"date_start\": \"2018-11-02T01:28:44.257Z\",\n    \"date_end\": \"2009-11-02T11:21:05.400Z\",\n    \"meeting_key\": 9889,\n    \"circuit_key\": 39,\n    \"circuit_short_name\": \"string\",\n    \"country_key\": 7310,\n    \"country_code\": \"string\",\n    \"country_name\": \"string\",\n    \"location\": \"string\",\n    \"gmt_offset\": \"string\",\n    \"year\": 5032,\n    \"is_cancelled\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openf1.org/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6b95470c-96f4-4362-b178-593f7c9693c3",
+    "name": "OpenF1 Drivers Sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.\n\nContact Support:\n Name: OpenF1",
+      "type": "text/plain"
+    }
+  }
+}
