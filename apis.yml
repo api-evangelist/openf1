@@ -4,6 +4,18 @@ description: >-
   OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap
   timings, race control messages, weather, pit stops, team radio, and championship standings.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -328,6 +340,12 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 common:
+  - type: IssueTracker
+    url: https://github.com/br-g/openf1/issues
+  - type: Releases
+    url: https://github.com/br-g/openf1/releases
+  - type: ContributionGuide
+    url: https://github.com/br-g/openf1/blob/main/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/openf1-agentic-access.yml
   - type: DomainSecurity
