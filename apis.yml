@@ -1,8 +1,8 @@
 aid: openf1
 name: OpenF1
-description: >-
-  OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap
-  timings, race control messages, weather, pit stops, team radio, and championship standings.
+description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including
+  car telemetry, lap timings, race control messages, weather, pit stops, team radio, and championship
+  standings.
 type: Index
 deliveryModel:
   model: unknown
@@ -32,13 +32,13 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openf1.png
 tags:
-  - Formula 1
-  - Motorsport
-  - Telemetry
-  - Real-Time
-  - Sports
+- Formula 1
+- Motorsport
+- Telemetry
+- Real-Time
+- Sports
 created: '2025-02-06'
-modified: '2026-05-19'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -55,20 +55,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-laps-api
   name: OpenF1 Laps API
   description: The Laps API from OpenF1 — 1 operation(s) for laps.
@@ -82,20 +77,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-meetings-api
   name: OpenF1 Meetings API
   description: The Meetings API from OpenF1 — 1 operation(s) for meetings.
@@ -109,20 +99,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-pit-api
   name: OpenF1 Pit API
   description: The Pit API from OpenF1 — 1 operation(s) for pit.
@@ -136,20 +121,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-position-api
   name: OpenF1 Position API
   description: The Position API from OpenF1 — 2 operation(s) for position.
@@ -163,20 +143,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-racecontrol-api
   name: OpenF1 RaceControl API
   description: The RaceControl API from OpenF1 — 1 operation(s) for racecontrol.
@@ -190,20 +165,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-sessions-api
   name: OpenF1 Sessions API
   description: The Sessions API from OpenF1 — 1 operation(s) for sessions.
@@ -217,20 +187,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-stints-api
   name: OpenF1 Stints API
   description: The Stints API from OpenF1 — 1 operation(s) for stints.
@@ -244,20 +209,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-teamradio-api
   name: OpenF1 TeamRadio API
   description: The TeamRadio API from OpenF1 — 1 operation(s) for teamradio.
@@ -271,20 +231,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-telemetry-api
   name: OpenF1 Telemetry API
   description: The Telemetry API from OpenF1 — 2 operation(s) for telemetry.
@@ -298,20 +253,15 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 - aid: openf1:openf1-weather-api
   name: OpenF1 Weather API
   description: The Weather API from OpenF1 — 1 operation(s) for weather.
@@ -325,35 +275,32 @@ apis:
   - type: Documentation
     url: https://openf1.org/
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld
 common:
-  - type: IssueTracker
-    url: https://github.com/br-g/openf1/issues
-  - type: Releases
-    url: https://github.com/br-g/openf1/releases
-  - type: ContributionGuide
-    url: https://github.com/br-g/openf1/blob/main/CONTRIBUTING.md
-  - type: AgenticAccess
-    url: agentic-access/openf1-agentic-access.yml
-  - type: DomainSecurity
-    url: security/openf1-domain-security.yml
-  - type: Documentation
-    url: https://openf1.org/
-  - type: GitHubRepository
-    url: https://github.com/br-g/openf1
+- type: Website
+  url: https://openf1.org
+- type: IssueTracker
+  url: https://github.com/br-g/openf1/issues
+- type: Releases
+  url: https://github.com/br-g/openf1/releases
+- type: ContributionGuide
+  url: https://github.com/br-g/openf1/blob/main/CONTRIBUTING.md
+- type: AgenticAccess
+  url: agentic-access/openf1-agentic-access.yml
+- type: DomainSecurity
+  url: security/openf1-domain-security.yml
+- type: Documentation
+  url: https://openf1.org/
+- type: GitHubRepository
+  url: https://github.com/br-g/openf1
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
