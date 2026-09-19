@@ -33,6 +33,12 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openf1.png
 tags:
 - Formula 1
+- Motorsports
+- Telemetry
+- Real-Time
+- Sports
+tags_raw:
+- Formula 1
 - Motorsport
 - Telemetry
 - Real-Time
