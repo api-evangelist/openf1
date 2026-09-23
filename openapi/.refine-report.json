@@ -1,17 +1,7 @@
 {
   "provider": "openf1",
   "sources": [
-    "openf1-drivers-api-openapi.yml",
-    "openf1-laps-api-openapi.yml",
-    "openf1-meetings-api-openapi.yml",
-    "openf1-pit-api-openapi.yml",
-    "openf1-position-api-openapi.yml",
-    "openf1-racecontrol-api-openapi.yml",
-    "openf1-sessions-api-openapi.yml",
-    "openf1-stints-api-openapi.yml",
-    "openf1-teamradio-api-openapi.yml",
-    "openf1-telemetry-api-openapi.yml",
-    "openf1-weather-api-openapi.yml"
+    "_original/openf1-openapi.yml"
   ],
   "outputs": [
     "openf1-drivers-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openf1-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "openf1-drivers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-laps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-meetings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-pit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-position-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-racecontrol-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-stints-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-teamradio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-telemetry-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openf1-weather-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

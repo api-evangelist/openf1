@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: OpenF1 Drivers Telemetry API
+  title: OpenF1 Telemetry API
   description: OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timing, race control, weather, pit stops, team radio, and championship standings.
   version: '1.0'
   contact:
@@ -69,6 +69,24 @@ paths:
                   $ref: '#/components/schemas/Location'
 components:
   schemas:
+    Location:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        driver_number:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        x:
+          type: number
+        y:
+          type: number
+        z:
+          type: number
     CarData:
       type: object
       properties:
@@ -93,24 +111,6 @@ components:
           type: integer
         drs:
           type: integer
-    Location:
-      type: object
-      properties:
-        meeting_key:
-          type: integer
-        session_key:
-          type: integer
-        driver_number:
-          type: integer
-        date:
-          type: string
-          format: date-time
-        x:
-          type: number
-        y:
-          type: number
-        z:
-          type: number
 externalDocs:
   description: OpenF1 API Documentation
   url: https://openf1.org/
