@@ -69,24 +69,6 @@ paths:
                   $ref: '#/components/schemas/Location'
 components:
   schemas:
-    Location:
-      type: object
-      properties:
-        meeting_key:
-          type: integer
-        session_key:
-          type: integer
-        driver_number:
-          type: integer
-        date:
-          type: string
-          format: date-time
-        x:
-          type: number
-        y:
-          type: number
-        z:
-          type: number
     CarData:
       type: object
       properties:
@@ -111,6 +93,24 @@ components:
           type: integer
         drs:
           type: integer
+    Location:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        driver_number:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        x:
+          type: number
+        y:
+          type: number
+        z:
+          type: number
 externalDocs:
   description: OpenF1 API Documentation
   url: https://openf1.org/
