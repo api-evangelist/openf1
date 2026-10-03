@@ -69,6 +69,20 @@ paths:
                   $ref: '#/components/schemas/Interval'
 components:
   schemas:
+    Position:
+      type: object
+      properties:
+        meeting_key:
+          type: integer
+        session_key:
+          type: integer
+        driver_number:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        position:
+          type: integer
     Interval:
       type: object
       properties:
@@ -85,20 +99,6 @@ components:
           type: number
         interval:
           type: number
-    Position:
-      type: object
-      properties:
-        meeting_key:
-          type: integer
-        session_key:
-          type: integer
-        driver_number:
-          type: integer
-        date:
-          type: string
-          format: date-time
-        position:
-          type: integer
 externalDocs:
   description: OpenF1 API Documentation
   url: https://openf1.org/
