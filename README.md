@@ -1,4 +1,4 @@
-# OpenF1 (openf1)
+# OpenF1
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,60 +66,154 @@
 
 OpenF1 is a free and open-source API providing real-time and historical Formula 1 data including car telemetry, lap timings, race control messages, weather, pit stops, team radio, and championship standings.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/apis.yml)
+**Areas:** Formula 1 · Motorsports · Telemetry · Real-Time · Sports
 
-## Scope
+## OpenF1 on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for OpenF1 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/openf1/](https://apis.io/providers/openf1/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- Formula 1
-- Motorsport
-- Telemetry
-- Real-Time
-- Sports
+- [OpenF1 Drivers API](https://apis.io/apis/openf1/openf1-drivers-api/) — The Drivers API from OpenF1 — 1 operation(s) for drivers.
+- [OpenF1 Laps API](https://apis.io/apis/openf1/openf1-laps-api/) — The Laps API from OpenF1 — 1 operation(s) for laps.
+- [OpenF1 Meetings API](https://apis.io/apis/openf1/openf1-meetings-api/) — The Meetings API from OpenF1 — 1 operation(s) for meetings.
+- [OpenF1 Pit API](https://apis.io/apis/openf1/openf1-pit-api/) — The Pit API from OpenF1 — 1 operation(s) for pit.
+- [OpenF1 Position API](https://apis.io/apis/openf1/openf1-position-api/) — The Position API from OpenF1 — 2 operation(s) for position.
+- [OpenF1 RaceControl API](https://apis.io/apis/openf1/openf1-racecontrol-api/) — The RaceControl API from OpenF1 — 1 operation(s) for racecontrol.
+- [OpenF1 Sessions API](https://apis.io/apis/openf1/openf1-sessions-api/) — The Sessions API from OpenF1 — 1 operation(s) for sessions.
+- [OpenF1 Stints API](https://apis.io/apis/openf1/openf1-stints-api/) — The Stints API from OpenF1 — 1 operation(s) for stints.
+- [OpenF1 TeamRadio API](https://apis.io/apis/openf1/openf1-teamradio-api/) — The TeamRadio API from OpenF1 — 1 operation(s) for teamradio.
+- [OpenF1 Telemetry API](https://apis.io/apis/openf1/openf1-telemetry-api/) — The Telemetry API from OpenF1 — 2 operation(s) for telemetry.
+- [OpenF1 Weather API](https://apis.io/apis/openf1/openf1-weather-api/) — The Weather API from OpenF1 — 1 operation(s) for weather.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-06
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### OpenF1 API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-OpenF1 is a free and open-source REST API that provides real-time and historical Formula 1 data, including car telemetry at 3.7 Hz, sector and lap timing, race control flags, pit stops, tyre stints, weather, and team radio recordings.
+- [Openf1 Agentic Access](https://apis.io/agentic-access/openf1/openf1-agentic-access/)
 
-- **Human URL:** [https://openf1.org/](https://openf1.org/)
-- **Base URL:** `https://api.openf1.org/v1`
+#### JSON Schema (4)
 
-#### Tags
+The data models the API reads and writes.
 
-- Formula 1
-- Telemetry
-- Real-Time
+- [OpenF1 Car Telemetry](https://apis.io/schemas/openf1/openf1-cardata/)
+- [OpenF1 Driver](https://apis.io/schemas/openf1/openf1-driver/)
+- [OpenF1 Lap](https://apis.io/schemas/openf1/openf1-lap/)
+- [OpenF1 Session](https://apis.io/schemas/openf1/openf1-session/)
 
-#### Properties
+#### JSON-LD (1)
 
+Linked-data contexts for the provider's vocabulary.
+
+- [Openf1 Context](https://apis.io/jsonld/openf1/openf1-context/)
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [OpenF1 API](https://apis.io/collections/openf1/open-openf1/)
+- [OpenF1 Drivers API](https://apis.io/collections/openf1/open-openf1-drivers-api/)
+- [OpenF1 Drivers Laps API](https://apis.io/collections/openf1/open-openf1-laps-api/)
+- [OpenF1 Drivers Meetings API](https://apis.io/collections/openf1/open-openf1-meetings-api/)
+- [OpenF1 Drivers Pit API](https://apis.io/collections/openf1/open-openf1-pit-api/)
+- [OpenF1 Drivers Position API](https://apis.io/collections/openf1/open-openf1-position-api/)
+- [OpenF1 Drivers RaceControl API](https://apis.io/collections/openf1/open-openf1-racecontrol-api/)
+- [OpenF1 Drivers Sessions API](https://apis.io/collections/openf1/open-openf1-sessions-api/)
+- [OpenF1 Drivers Stints API](https://apis.io/collections/openf1/open-openf1-stints-api/)
+- [OpenF1 Drivers TeamRadio API](https://apis.io/collections/openf1/open-openf1-teamradio-api/)
+- [OpenF1 Drivers Telemetry API](https://apis.io/collections/openf1/open-openf1-telemetry-api/)
+- [OpenF1 Drivers Weather API](https://apis.io/collections/openf1/open-openf1-weather-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [OpenF1 — jsonschema rules](https://apis.io/rules/openf1/openf1-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Openf1 Domain Security](https://apis.io/security/openf1/openf1-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Openf1 Plans Pricing](https://apis.io/plans/openf1/openf1-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Openf1 Rate Limits](https://apis.io/rate-limits/openf1/openf1-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Openf1 Finops](https://apis.io/finops/openf1/openf1-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://openf1.org)
 - [Documentation](https://openf1.org/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/openapi/openf1-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-session-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-driver-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-lap-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-schema/openf1-cardata-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/openf1/refs/heads/main/json-ld/openf1-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Postman Collection](collections/openf1.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openf1.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-## Common Properties
+## API Evangelist rating
 
-- [Documentation](https://openf1.org/)
-- [GitHub Repository](https://github.com/br-g/openf1)
+**Kin Score 27.1** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 50.9 |
+| Contract governance | 9.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 7.9 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/openf1/](https://apis.io/providers/openf1/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OpenF1: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/openf1/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
